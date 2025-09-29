@@ -35,7 +35,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("api/match_vaga")
+@app.post("/api/match_vaga")
 async def match_vaga(descricao: str = Form(...)):
     """
     Recebe a descrição de uma única vaga.
@@ -58,7 +58,7 @@ async def match_vaga(descricao: str = Form(...)):
         return JSONResponse(status_code=500, content={"erro": f"Ocorreu um erro inesperado: {str(e)}"})
 
 
-@app.post("api/match_vagas")
+@app.post("/api/match_vagas")
 async def match_vagas(file: UploadFile = File(...)):
     """
     Recebe um arquivo JSON com múltiplas vagas.

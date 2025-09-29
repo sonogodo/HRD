@@ -7,15 +7,15 @@
   "routes": [
     {
       "src": "/match_vaga",
-      "dest": "api/index.py"
+      "dest": "/api/index.py"
     },
     {
       "src": "/match_vagas", 
-      "dest": "api/index.py"
+      "dest": "/api/index.py"
     },
     {
       "src": "/(.*)",
-      "dest": "public/index.html"
+      "dest": "/public/index.html"
     }
   ]
 }
