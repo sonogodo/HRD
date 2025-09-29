@@ -4,5 +4,10 @@
       "memory": 1024,
       "maxDuration": 30
     }
-  }
+  },
+  "routes": [
+    { "src": "/match_vaga", "dest": "api/index.py" },
+    { "src": "/match_vagas", "dest": "api/index.py" },
+    { "src": "/(.*)", "dest": "public/index.html" }
+  ]
 }
