@@ -13,6 +13,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # =================================================================
 from fastapi import FastAPI, UploadFile, File, Form
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import json
 
 # =================================================================
@@ -26,6 +27,13 @@ import json
 
 # Inicializa a aplicação FastAPI
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # para produção restrinja para seu domínio
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("api/match_vaga")
 async def match_vaga(descricao: str = Form(...)):
